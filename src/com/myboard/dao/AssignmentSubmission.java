@@ -19,6 +19,7 @@ public class AssignmentSubmission implements java.io.Serializable {
 	private Integer pointsEarned;
 	private String submissionFilename;
 	private String comments;
+	private Integer assignmentId;
 
 	public AssignmentSubmission() {
 	}
@@ -40,6 +41,27 @@ public class AssignmentSubmission implements java.io.Serializable {
 		this.pointsEarned = pointsEarned;
 		this.submissionFilename = submissionFilename;
 		this.comments = comments;
+	}
+	
+	public AssignmentSubmission(Assignments assignment,
+			CourseUsers user, Date dateStarted, Date dateSubmitted,
+			Integer pointsEarned, String submissionFilename, String comments, Integer assignmentId){
+		this.assignment = assignment;
+		this.user = user;
+		this.dateStarted = dateStarted;
+		this.dateSubmitted = dateSubmitted;
+		this.pointsEarned = pointsEarned;
+		this.submissionFilename = submissionFilename;
+		this.comments = comments;
+		this.assignmentId = assignmentId;
+	}
+	
+	public Integer getAssignmentId(){
+		return assignmentId;
+	}
+	
+	public void setAssignmentId(Integer assignmentId){
+		this.assignmentId = assignmentId;
 	}
 	
 	public Integer getSubmissionId() {
