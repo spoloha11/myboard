@@ -3,6 +3,8 @@ package com.myboard.business;
 import java.io.Serializable;
 import java.util.Date;
 
+import javax.faces.context.FacesContext;
+
 public class UserSession implements Serializable {
 
 	private static final long serialVersionUID = -7050402384121642617L;
@@ -58,5 +60,10 @@ public class UserSession implements Serializable {
 	
 	public String getUserId(){
 		return user.getUid();
+	}
+
+	public static UserSession getCurrentSession(){
+		return (UserSession)FacesContext.getCurrentInstance()
+				.getExternalContext().getSessionMap().get("userSession");
 	}
 }
